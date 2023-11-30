@@ -24,3 +24,14 @@ trip up the process.
 The algorithm checks the input and compares it to its own
 randomly determined hand. It displays one of three possible 
 messages. It starts a new game.
+
+# Second Entry: Final Push
+
+I forgot to journal my experience writing this program, but I
+didn't forget to commit often. That's still a lesson learned
+from the first project: the recipe page. 
+
+The whole project was way easier than some Redditors made me
+believe. It took about 3 to 4 hours of dedicated work to 
+complete. I met all objectives and added one or two that I
+thought would be an appropriate challenge for my level.
