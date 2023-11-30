@@ -1,0 +1,1 @@
+console.log("In Asia, people tend to say 'Paper Scissors Stone!' but to each their own.");
