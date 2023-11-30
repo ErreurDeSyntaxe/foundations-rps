@@ -1,10 +1,11 @@
 //This array contains the three possible hands
-const hand = ['Rock', 'Paper', 'Scissors'];
+const hand = ['rock', 'paper', 'scissors'];
 
 //The computer randomly determines a hand to play
 function getComputerChoice () {
     let randomN = Math.floor(Math.random() * 3);
-    return hand[randomN];
+    return randomN;
+    //returns the position in the hand array to compare more easily
 }
 
 //The player is prompted to choose one of three hands
@@ -13,20 +14,19 @@ function getComputerChoice () {
 function getPlayerChoice () {
     let correctInput = false;
     let playerSelection = "";
-    let playerInput = "";
 
-    //the loop prompts the user until the input is correct
-    //ie, input is rock, paper, or scissors
     while (!correctInput) {
-        playerInput = prompt("Please choose 'Rock', 'Paper', or 'Scissors'");
-        playerInput = playerInput.toLowerCase();
-
-        //It is not necessary to format the input this way
-        //but I wanted to learn about Strings
-        playerSelection = playerInput[0].toUpperCase() + playerInput.slice(1);
+        playerSelection = prompt("Please choose 'Rock', 'Paper', or 'Scissors'");
+        playerSelection = playerSelection.toLowerCase();
         correctInput = validateChoice(playerSelection);
     }
-    return playerSelection;
+    for (let i = 0; i < 3; i++) {
+        if (hand[i] == playerSelection) {
+            return i;
+            //returns the position in the array to compare
+            //values (0, 1, or 2) more easily (than words)
+        }
+    }
 }
 
 //This checks if the input from the user matches any
@@ -44,8 +44,20 @@ function validateChoice(choice) {
 //This plays RPS with the user until there is a winner
 //If the player and computer tie, the round is not over
 function playRound (computer, human) {
-    console.log("This does nothing yet.");
-    console.log(computer, human);
+    console.log(computer + " " + human);
+    if (computer == human) {
+        console.log("It's a tie! Keep playing!");
+        return undefined;
+    } else if (computer - human == -1 || computer - human == 2) {
+        return "human";
+    } else if (human - computer == -1 || human - computer == 2) {
+        return "computer";
+    }
 }
 
-playRound(getComputerChoice(), getPlayerChoice());
+//
+let roundWinner = undefined;
+while (roundWinner === undefined) {
+    roundWinner = playRound(getComputerChoice(), getPlayerChoice());
+}
+console.log(roundWinner);
