@@ -16,7 +16,7 @@ function getPlayerChoice () {
     let playerSelection = "";
 
     while (!correctInput) {
-        playerSelection = prompt("Please choose 'Rock', 'Paper', or 'Scissors'");
+        playerSelection = prompt("Please input 'Rock', 'Paper', or 'Scissors'");
         playerSelection = playerSelection.toLowerCase();
         correctInput = validateChoice(playerSelection);
     }
@@ -56,7 +56,6 @@ function playRound (computer, human) {
 }
 
 //This code plays a round and finds a winner
-
 function playGame() {
     let computerScore = 0;
     let humanScore = 0;
@@ -68,15 +67,18 @@ function playGame() {
             let human = getPlayerChoice();
             roundWinner = playRound(computer, human);
             if (roundWinner == "human") {
-                let sentence = "You win this round! " + hand[human][0].toUpperCase() + hand[human].slice(1) + " beats " + hand[computer] + "!";
-                //The difference here is just to practice backticks and quotation marks
-                console.log(sentence);
+                console.log("You win this round! " +
+                    hand[human][0].toUpperCase() +
+                    hand[human].slice(1) + " beats " + hand[computer] + "!");
                 humanScore++;
             } else if (roundWinner == "computer") {
-                //The difference here is just to practice backticks and quotation marks
-                console.log(`You lose this round! ${hand[computer][0].toUpperCase()}${hand[computer].slice(1)} beats ${hand[human]}!`);
+                console.log("You lose this round! " +
+                    hand[computer][0].toLocaleUpperCase() +
+                    hand[computer].slice(1) + "beats " + hand[human] + "!");
                 computerScore++;
             }
+            console.log("The score is: Computer " + computerScore +
+                " to " + humanScore + " Human");
         }
     }
     if (humanScore == 5) {
@@ -102,7 +104,7 @@ function playAgain() {
     //if the user hits the cancel button from the 
     //prompt box, the value of answer becomes null
     while (answer != null && answer != "y" && answer != "n") {
-        answer = prompt("Would you like to play again? Enter 'y' for yes or 'n' for no.");
+        answer = prompt("Would you like to play again? Enter 'y' or 'n'.");
         if (answer == "y") {
             console.clear();
             playGame();
@@ -117,11 +119,13 @@ function playAgain() {
 //It calls resetScore() and playAgain() to check if the user wants to play
 function endGame(winner, computerScore, humanScore) {
     if (winner == "human") {
-        console.log(`You have won the match ${humanScore} to ${computerScore}! Congratulations!! Cntl + R to play again.`);
+        console.log("You have won the match " +
+            humanScore + " to " + computerScore + ". Congratulations!!");
         resetScore();
         playAgain();
     } else {
-        console.log(`You have lost the match ${computerScore} to ${humanScore}. Better luck next time! Cntl + R to play again.`);
+        console.log("You have lost the match " +
+            computerScore + " to " + humanScore + ". Better luck next time!");
         resetScore();
         playAgain();
     }
