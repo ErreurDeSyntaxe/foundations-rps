@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- <script src="js/script.js" defer></script> -->
+    <script src="js/script.js" defer></script>
 
     <header><h1>Rock Paper Scissors</h1></header>
 
@@ -20,11 +20,15 @@
         <button class="playBtn" id="paperBtn">Paper</button>
         <button class="playBtn" id="scissorsBtn">Scissors</button>
         </div>
-        <p>The score is: </p>
+        <div class="scoreSheet">
+            <p>The score is: </p>
+            <span id="computerScore">Computer: </span>
+            <span id="humanScore">Human:</span>
+        </div>
     </main>
     
     <footer>
-        Paper Scissors Stone
+        Paper Scissors Stone, as we say in Asia
     </footer>
 
 </body>

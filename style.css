@@ -10,6 +10,25 @@
     box-sizing: inherit;
 }
 
+.playBtn {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.instructions,
+.scoreSheet {
+    padding: 10px;
+}
+
+#computerScore,
+#humanScore {
+    margin: 10px;
+    padding: 10px;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -36,4 +55,5 @@ header {
 
 footer {
     margin-top:auto;
+    font-size: 13px;
 }
