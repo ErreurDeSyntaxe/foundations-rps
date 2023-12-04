@@ -11,5 +11,29 @@
 }
 
 body {
-    background-color: darkslategrey;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    background-color: dimgrey;
+    color: goldenrod;
+    text-align: center;
+    padding: 12px;
+}
+
+main {
+    background-color: grey;
+    text-align: center;
+    flex: 1;
+}
+
+header {
+    font-size: 40px;
+}
+
+footer {
+    margin-top:auto;
 }

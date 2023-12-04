@@ -81,3 +81,10 @@ What must be there? What should be added dynamically? Should I
 review my flexbox knowledge and build a clean but simple layout? 
 Poser la question, c'est y répondre. I'll start by making a page.
 html and CSS, here I come.
+
+# Fifth Entry: Flexbox Nightmares
+
+It's been a week since I touched flexbox, and it feels like I forgot
+everything I knew. Everything is so hard! I need to practice, but I
+also need to make headway in TOP, so there's no time to lose on
+a single skill. Still, the disappointment of powerlessness stings.
