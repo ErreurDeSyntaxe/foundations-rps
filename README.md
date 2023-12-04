@@ -64,3 +64,20 @@ I seem alone to have compared the array position. Maybe it was
 foolish to do so. When we come back to this project, it could be
 a good exercise to start from scratch and use a different approach
 to solving it.
+
+# Fourth Entry: Back in Black
+
+I struggled with arrows functions and callbacks (I still do) for
+a few days, but made it to the lesson which brings students back
+to the RPS game to build an interface. Let's go!
+
+First question: should I build the UI in html? My instinct is to
+do so because it is cleaner to add the page elements that must 
+be present in the html. But the past lessons have all been about 
+creating stuff in the .js file. I want to check other students' 
+projects, but I don't want to shoot myself in the foot doing so.
+
+What must be there? What should be added dynamically? Should I
+review my flexbox knowledge and build a clean but simple layout? 
+Poser la question, c'est y répondre. I'll start by making a page.
+html and CSS, here I come.
