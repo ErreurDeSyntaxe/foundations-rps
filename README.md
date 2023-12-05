@@ -88,3 +88,15 @@ It's been a week since I touched flexbox, and it feels like I forgot
 everything I knew. Everything is so hard! I need to practice, but I
 also need to make headway in TOP, so there's no time to lose on
 a single skill. Still, the disappointment of powerlessness stings.
+
+# Sixth Entry: Layout and Inner Workings
+
+The page layout is simple, but it does the job. The footer is at the
+bottom, the body takes the whole page. It was tough, but it happened.
+The game now computes through buttons instead of prompt. It was tricky
+to refactor the code, but that's what happens when a newbie writes
+code; the code sucks.
+
+I'll move on to targeting the DOM to display the score instead of
+using the console. It shouldn't be too difficult, but then again,
+the page layout was supposed to be simple too. Let's commit first.
