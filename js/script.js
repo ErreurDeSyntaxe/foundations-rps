@@ -41,14 +41,19 @@ function playRound (computer, player) {
         displayScore("computer", computer, player);
     }
     if (gameOver()) {
+        console.log("Game OveR!");
         endGame();
     }
 }
 
-function displayScore(roundWinner, computer, player) {
-    if (roundWinner == "tie") {
+function displayScore(roundWinner = "newRound", computer = 3, player = 3) {
 
-        
+    let cScore = document.querySelector("#computerScore");
+    cScore.textContent = "Computer: " + computerScore;
+    let hScore = document.querySelector("#playerScore");
+    hScore.textContent = playerScore + " : Player";
+
+    if (roundWinner == "tie") {     
         console.log("You and the computer both chose " +
             HAND[player][0].toUpperCase() +
             HAND[player].slice(1) + "! It's a tie!");
@@ -82,23 +87,60 @@ function resetScore() {
     computerScore = 0;
 }
 
+function removeButtons() {
+    let buttons = document.querySelectorAll(".playBtn");
+
+    buttons[0].style.visibility = "hidden";
+    buttons[1].style.visibility = "hidden";
+    buttons[2].style.visibility = "hidden";
+}
+
+function turnOffButtons () {
+    let buttons = document.querySelectorAll(".playBtn");
+
+    buttons[0].disabled = true;
+    buttons[1].disabled = true;
+    buttons[2].disabled = true;
+}
+
+function turnOnButtons() {
+    let buttons = document.querySelectorAll(".playBtn");
+
+    buttons[0].disabled = false;
+    buttons[1].disabled = false;
+    buttons[2].disabled = false;
+}
+
 function playAgain() {
-    let answer = "place holder value";
-    
-    //asks until the answer is either 'y' or 'n' CANCEL button returns null
-    while (answer != null && answer != "y" && answer != "n") {
-        answer = prompt("Would you like to play again? Enter 'y' or 'n'.");
-        if (answer == "y") {
-            console.clear();
-        } else if (answer == "n") {
-            console.log("Have a good one!");
-            return;
-        }
-    }
+    let rematch = document.querySelector(".offerRematch");
+
+    const rematchBtn = document.createElement("button");
+    const declineBtn = document.createElement("button");
+
+    rematchBtn.textContent = "Play Again!";
+    declineBtn.textContent = "No thanks!";
+
+    rematch.appendChild(rematchBtn);
+    rematch.appendChild(declineBtn);
+
+    rematchBtn.addEventListener("click", () => {
+        resetScore();
+        displayScore();
+        turnOnButtons();
+        rematch.removeChild(rematchBtn);
+        rematch.removeChild(declineBtn);
+
+    })
+    declineBtn.addEventListener("click", () => {
+        rematch.removeChild(rematchBtn);
+        rematch.removeChild(declineBtn);
+        removeButtons();
+    })
 }
 
 //This ends the game and offers a rematch
 function endGame() {
+    turnOffButtons();
     if (playerScore == 5) {
         console.log("You have won the match " +
             playerScore + " to " + computerScore + ". Congratulations!!");
