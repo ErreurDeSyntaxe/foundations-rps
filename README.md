@@ -100,3 +100,10 @@ code; the code sucks.
 I'll move on to targeting the DOM to display the score instead of
 using the console. It shouldn't be too difficult, but then again,
 the page layout was supposed to be simple too. Let's commit first.
+
+# Seventh Entry: Closing In On The Finish Line
+
+Buttons are working well. It was just as difficult/easy as I had imagined.
+Coding is hard, but I have known that for over a decade. What is still new
+is the difficulty of web page layout. Wow. That shit blows my mind every
+time I write CSS. 

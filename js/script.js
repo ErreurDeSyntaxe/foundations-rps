@@ -40,10 +40,24 @@ function playRound (computer, player) {
         computerScore++;
         displayScore("computer", computer, player);
     }
+    displayHand(computer, player);
     if (gameOver()) {
-        console.log("Game OveR!");
+        console.log("Game Over!");
         endGame();
     }
+}
+
+function removeRecords() {
+    let roundResults = document.querySelector(".roundResults");
+    roundResults.textContent = "";
+}
+
+function displayHand(computer, player) {
+    let roundResults = document.querySelector(".roundResults");
+    let newestRound = document.createElement("p");
+
+    newestRound.textContent = HAND[computer] + " VS " + HAND[player];
+    roundResults.prepend(newestRound);
 }
 
 function displayScore(roundWinner = "newRound", computer = 3, player = 3) {
@@ -76,8 +90,6 @@ function gameOver() {
     return (computerScore == 5 || playerScore == 5);
 }
 
-//This plays a round, asks for a winner from playRound() and displays a winner
-//Should it be broken into three functions?
 function playGame() {
     getPlayerChoice();
 }
@@ -127,6 +139,7 @@ function playAgain() {
         resetScore();
         displayScore();
         turnOnButtons();
+        removeRecords();
         rematch.removeChild(rematchBtn);
         rematch.removeChild(declineBtn);
 
