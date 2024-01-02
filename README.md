@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# foundations-rock-paper-scissors
 An in-browser console game of paper, scissors, stone
 
 # Preview
@@ -11,7 +11,7 @@ An in-browser console game of paper, scissors, stone
 
 -[Assignment Page (Dec '23)](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
 
--[Finished Project](https://erreurdesyntaxe.github.io/rock-paper-scissors/)
+-[Finished Project](https://erreurdesyntaxe.github.io/foundations-rock-paper-scissors/)
 
 # Notable Features
 
