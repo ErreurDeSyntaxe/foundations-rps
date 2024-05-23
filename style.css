@@ -9,15 +9,25 @@
 
 /* COLORS */
 /* 
-Main:
+Main: #D62828
+tints: 
+shades:
+
+True Gray: #555
+
+Grey: #003049
 tints:
 shades:
 
-Grey: #555
+Accent: #F77F00
 tints:
 shades:
 
-Accent:
+Accent: #FCBF49
+tints:
+shades:
+
+Accent: #EAE2B7
 tints:
 shades:
 */
@@ -44,52 +54,4 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-}
-
-.playBtn {
-  height: 100px;
-  width: 100px;
-  background-color: black;
-  color: whitesmoke;
-  font-size: 20px;
-}
-
-.instructions,
-.scoreSheet {
-  padding: 10px;
-}
-
-#computerScore,
-#humanScore {
-  margin: 10px;
-  padding: 10px;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-header,
-footer {
-  background-color: dimgrey;
-  color: goldenrod;
-  text-align: center;
-  padding: 12px;
-}
-
-main {
-  background-color: grey;
-  text-align: center;
-  flex: 1;
-}
-
-header {
-  font-size: 40px;
-}
-
-footer {
-  margin-top: auto;
-  font-size: 13px;
 }
