@@ -1,59 +1,95 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* TYPOGRAPHY */
+/* Font Sizing Scale (px) */
+/* 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+/* Font Weights */
 
+/* Line Heights */
+
+/* Letter Spacing */
+
+/* COLORS */
+/* 
+Main:
+tints:
+shades:
+
+Grey: #555
+tints:
+shades:
+
+Accent:
+tints:
+shades:
+*/
+
+/* BOX SHADOWS */
+
+/* BORDER RADIUSES */
+
+/* WHITESPACE  */
+/* Spacing Scale (px) */
+/* 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
 }
 
 .playBtn {
-    height: 100px;
-    width: 100px;
-    background-color: black;
-    color: whitesmoke;
-    font-size: 20px;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  color: whitesmoke;
+  font-size: 20px;
 }
 
 .instructions,
 .scoreSheet {
-    padding: 10px;
+  padding: 10px;
 }
 
 #computerScore,
 #humanScore {
-    margin: 10px;
-    padding: 10px;
+  margin: 10px;
+  padding: 10px;
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header,
 footer {
-    background-color: dimgrey;
-    color: goldenrod;
-    text-align: center;
-    padding: 12px;
+  background-color: dimgrey;
+  color: goldenrod;
+  text-align: center;
+  padding: 12px;
 }
 
 main {
-    background-color: grey;
-    text-align: center;
-    flex: 1;
+  background-color: grey;
+  text-align: center;
+  flex: 1;
 }
 
 header {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 footer {
-    margin-top:auto;
-    font-size: 13px;
+  margin-top: auto;
+  font-size: 13px;
 }
