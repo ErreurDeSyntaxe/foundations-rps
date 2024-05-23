@@ -54,4 +54,47 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  font-size: 1.8rem;
+}
+
+/* HEADER STYLING: LOGO, NAVIGATION, NAV BUTTON */
+.header {
+  background-color: #003049;
+  padding: 0 1.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header-logo {
+  height: 8rem;
+}
+.main-nav {
+}
+.main-nav-list {
+  list-style: none;
+
+  display: flex;
+  gap: 1.2rem;
+}
+.main-nav-link {
+  color: #eae2b7;
+  text-decoration: none;
+}
+.btn-mobile-nav {
+  display: none;
+}
+
+/* OTHER CONTENT */
+.section-hero {
+  display: none;
+}
+.section-rules {
+  display: none;
+}
+.section-play {
+  display: none;
+}
+.footer {
+  display: none;
 }
