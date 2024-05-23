@@ -1,37 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Your Luck</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <script src="js/script.js" defer></script>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="A fun game of Rock Paper Scissors played against a computer. The first the 5 points wins!"
+    />
+    <link
+      rel="stylesheet"
+      href="./style.css"
+    />
+    <link
+      rel="icon"
+      href="./img/favicon.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./img/apple-touch-img.png"
+    />
+    <link
+      rel="manifest"
+      href="./manifest.webmanifest"
+    />
+    <script
+      defer
+      src="./js/script.js"
+    ></script>
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
     <header><h1>Rock Paper Scissors</h1></header>
 
     <main>
-        <h1>The first to reach 5 points wins!</h1>
-        <p class="instructions">The computer will generate 
-            its own choice of Rock, Paper or Scissors. Choose yours.</p>
-        <div class="container">
-        <button class="playBtn" id="rockBtn">Rock</button>
-        <button class="playBtn" id="paperBtn">Paper</button>
-        <button class="playBtn" id="scissorsBtn">Scissors</button>
-        </div>
-        <div class="scoreSheet">
-            <p>The score is: </p>
-            <span id="computerScore">Computer: 0</span>
-            <span id="playerScore">0 :Player</span>
-            <div class="offerRematch"></div>
-            <div class="roundResults"></div>
-        </div>
+      <h1>The first to reach 5 points wins!</h1>
+      <p class="instructions">
+        The computer will generate its own choice of Rock, Paper or Scissors.
+        Choose yours.
+      </p>
+      <div class="container">
+        <button
+          class="playBtn"
+          id="rockBtn"
+        >
+          Rock
+        </button>
+        <button
+          class="playBtn"
+          id="paperBtn"
+        >
+          Paper
+        </button>
+        <button
+          class="playBtn"
+          id="scissorsBtn"
+        >
+          Scissors
+        </button>
+      </div>
+      <div class="scoreSheet">
+        <p>The score is:</p>
+        <span id="computerScore">Computer: 0</span>
+        <span id="playerScore">0 :Player</span>
+        <div class="offerRematch"></div>
+        <div class="roundResults"></div>
+      </div>
     </main>
-    
-    <footer>
-        Paper Scissors Stone, as we say in Asia
-    </footer>
 
-</body>
+    <footer>Paper Scissors Stone, as we say in Asia</footer>
+  </body>
 </html>
