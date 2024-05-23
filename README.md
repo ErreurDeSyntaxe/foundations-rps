@@ -26,7 +26,7 @@ An in-browser console game of paper, scissors, stone
 
 # Lessons
 
--The backend in difficult but more logical (?)  
+-The backend is difficult but more logical (?)  
 
 # Diary
 
