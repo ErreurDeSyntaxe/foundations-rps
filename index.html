@@ -16,7 +16,7 @@
     />
     <link
       rel="icon"
-      href="./img/favicon.svg"
+      href="./img/favicon-small.png"
     />
     <link
       rel="apple-touch-icon"
@@ -32,44 +32,73 @@
     ></script>
     <title>Rock Paper Scissors</title>
   </head>
+
   <body>
-    <header><h1>Rock Paper Scissors</h1></header>
+    <header>
+      <a href="#"
+        ><img
+          src="./img/erreur-logo.png"
+          alt="Erreur de Syntaxe Logo"
+          class="header-logo logo"
+      /></a>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a href="#">Rules</a></li>
+          <li><a href="#">Origin</a></li>
+          <li><a href="#">Play!</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav">open-img / close-img</button>
+    </header>
 
     <main>
-      <h1>The first to reach 5 points wins!</h1>
-      <p class="instructions">
-        The computer will generate its own choice of Rock, Paper or Scissors.
-        Choose yours.
-      </p>
-      <div class="container">
-        <button
-          class="playBtn"
-          id="rockBtn"
-        >
-          Rock
-        </button>
-        <button
-          class="playBtn"
-          id="paperBtn"
-        >
-          Paper
-        </button>
-        <button
-          class="playBtn"
-          id="scissorsBtn"
-        >
-          Scissors
-        </button>
-      </div>
-      <div class="scoreSheet">
-        <p>The score is:</p>
-        <span id="computerScore">Computer: 0</span>
-        <span id="playerScore">0 :Player</span>
-        <div class="offerRematch"></div>
-        <div class="roundResults"></div>
-      </div>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box"></div>
+          <div class="hero-img-box"></div>
+        </div>
+      </section>
+
+      <section class="section-rules">
+        <div class="rules">
+          <ol>
+            <li>Rock beats scissors.</li>
+            <li>Scissors beat paper.</li>
+            <li>Paper beats rock.</li>
+            <li>Ties yield no points.</li>
+            <li>The first player to 5 points wins.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section-play">
+        <div class="play">
+          <div class="scores">
+            <div class="player1-score">1</div>
+            <div class="player2-score">4</div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>Paper Scissors Stone, as we say in Asia</footer>
+    <footer class="footer">
+      <div class="logo-col">
+        <img
+          src=""
+          alt="Erreur de Syntaxe logo"
+          width="111px"
+          height="111px"
+          class="footer-logo logo"
+        />
+      </div>
+
+      <nav class="nav-col">
+        <ul class="footer-nav-list">
+          <li class="footer-list-item"><a href="#">Link 1</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
