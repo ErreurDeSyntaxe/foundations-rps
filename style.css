@@ -122,6 +122,7 @@ body {
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  column-gap: 4.8rem;
 }
 .hero-heading {
   font-size: 6.2rem;
@@ -129,7 +130,7 @@ body {
   margin-bottom: 4.8rem;
 }
 .hero-text-box {
-  padding: 6.2rem 1.2rem;
+  padding: 6.2rem 0;
 }
 .hero-text {
   font-size: 2rem;
