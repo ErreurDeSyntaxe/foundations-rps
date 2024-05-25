@@ -60,7 +60,25 @@ body {
   font-size: 1.8rem;
 }
 
-/* HEADER STYLING: LOGO, NAVIGATION, NAV BUTTON */
+/* **************** */
+/* REUSABLE STYLING */
+/* **************** */
+.section-heading {
+}
+.subheading {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+.heading-secondary {
+  text-transform: capitalize;
+  font-size: 3.2rem;
+  margin-bottom: 4.8rem;
+}
+
+/* ************** */
+/* HEADER STYLING */
+/* ************** */
 .header {
   background-color: #003049;
   padding: 1.2rem 2.4rem;
@@ -110,7 +128,9 @@ body {
   display: none;
 }
 
+/* ************ */
 /* HERO STYLING */
+/* ************ */
 .section-hero {
   padding: 8rem 0;
   background-color: #003049;
@@ -186,10 +206,101 @@ body {
   grid-row: 1 / -1;
 }
 
-/* OTHER CONTENT */
+/* *************** */
+/* ORIGIN STYLING */
+/* *************** */
+.section-origin {
+  padding: 8rem 0;
+  background-color: #eae2b7;
+  color: #003049;
+}
+.origin {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+.timeline {
+  position: relative;
+  height: 40rem;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  height: 0.6rem;
+  background-color: #d62828;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+.event {
+  max-width: 45rem;
+  padding: 1rem 4rem;
+  background-color: #003049;
+  color: #eae2b7;
+  border-radius: 9px;
+
+  position: relative;
+}
+.event-1 {
+}
+.event-2 {
+  top: 11rem;
+  left: 20rem;
+}
+.event-3 {
+  top: -28.5rem;
+  left: 57rem;
+}
+.event-4 {
+  top: -17.5rem;
+  left: 77rem;
+}
+
+/* arrows */
+.event-1::after,
+.event-2::after,
+.event-3::after,
+.event-4::after {
+  border: solid transparent;
+  content: '';
+  height: 0;
+  width: 0;
+  border-width: 30px;
+  margin-left: -30px;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+
+  position: absolute;
+}
+.event-1::after,
+.event-3::after {
+  top: 100%;
+  left: 50%;
+  border-top-color: #003049;
+}
+.event-2::after,
+.event-4::after {
+  bottom: 100%;
+  left: 50%;
+  border-bottom-color: #003049;
+}
+/* arrows end */
+
+.event-date {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+}
+.event-text {
+  line-height: 1.6;
+}
+
+/* ************* */
+/* RULES STYLING */
+/* ************* */
 .section-rules {
   display: none;
 }
+
+/* OTHER CONTENT */
 .section-testimonials {
   display: none;
 }
