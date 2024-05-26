@@ -199,6 +199,8 @@ body {
 }
 .hero-img {
   width: 100%;
+  filter: invert(94%) sepia(3%) saturate(2391%) hue-rotate(358deg)
+    brightness(103%) contrast(84%);
 
   transition: all 700ms;
   display: block;
@@ -227,9 +229,9 @@ body {
   position: absolute;
   height: 0.6rem;
   background-color: #d62828;
-  left: 0;
+  left: 220px;
   right: 0;
-  top: 50%;
+  top: 48.5%;
 }
 .event {
   max-width: 45rem;
