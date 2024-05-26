@@ -63,6 +63,11 @@ body {
 /* **************** */
 /* REUSABLE STYLING */
 /* **************** */
+:root {
+  --primary-color: #d62828;
+  --background-color: #003049;
+  --font: serif;
+}
 .section-heading {
 }
 .subheading {
@@ -220,79 +225,132 @@ body {
   max-width: 130rem;
   margin: 0 auto;
 }
+/* Timeline Container */
 .timeline {
-  position: relative;
-  height: 40rem;
+  max-width: 58rem;
+  margin: 0 auto;
 }
-.timeline::after {
+
+/* Card container */
+.card {
+  position: relative;
+}
+
+/* setting padding based on even or odd */
+.card:nth-child(odd) {
+  padding: 3rem 0 3rem 3rem;
+}
+.card:nth-child(even) {
+  padding: 3rem 3rem 3rem 0;
+}
+/* Global ::before */
+.card::before {
   content: '';
   position: absolute;
-  height: 0.6rem;
-  background-color: #d62828;
-  left: 220px;
-  right: 0;
-  top: 48.5%;
+  width: 50%;
+  border: solid #d62828;
 }
-.event {
-  max-width: 45rem;
-  padding: 1rem 4rem;
-  background-color: #003049;
+
+/* Setting the border of top, bottom, left */
+.card:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+  .card:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Setting the border of top, bottom, right */
+.card:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first card */
+.card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's odd */
+.card:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last card  and it's even */
+.card:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Information about the timeline */
+.info {
+  display: flex;
+  flex-direction: column;
+  background: #003049;
   color: #eae2b7;
   border-radius: 9px;
+  padding: 4.8rem;
+}
 
+/* Title of the card */
+.title {
+  font-size: 2rem;
+  color: #eae2b7;
+
+  margin-bottom: 2.4rem;
   position: relative;
 }
-.event-1 {
-}
-.event-2 {
-  top: 11rem;
-  left: 20rem;
-}
-.event-3 {
-  top: -28.5rem;
-  left: 57rem;
-}
-.event-4 {
-  top: -17.5rem;
-  left: 77rem;
-}
-
-/* arrows */
-.event-1::after,
-.event-2::after,
-.event-3::after,
-.event-4::after {
-  border: solid transparent;
+/* Timeline dot  */
+.title::before {
   content: '';
-  height: 0;
-  width: 0;
-  border-width: 30px;
-  margin-left: -30px;
-  pointer-events: none;
-  border-color: rgba(255, 255, 255, 0);
-
   position: absolute;
-}
-.event-1::after,
-.event-3::after {
-  top: 100%;
-  left: 50%;
-  border-top-color: #003049;
-}
-.event-2::after,
-.event-4::after {
-  bottom: 100%;
-  left: 50%;
-  border-bottom-color: #003049;
-}
-/* arrows end */
 
-.event-date {
-  font-size: 2rem;
-  margin-bottom: 1.6rem;
+  width: 2rem;
+  height: 2rem;
+  background: #eae2b7;
+  border-radius: 999px;
+  border: 3px solid #d62828;
 }
-.event-text {
+.card:nth-child(odd) .title::before {
+  transform: translateX(-4rem);
+}
+.card:nth-child(even) .title::before {
+  transform: translateX(40px);
+}
+.description {
+  font-size: 1.8rem;
   line-height: 1.6;
+}
+.event-date {
+  color: #d62828;
+}
+
+/* text right if the card is even  */
+.card:nth-child(even) > .info > .title {
+  text-align: right;
+}
+
+/* setting dot to the left if the card is odd */
+.card:nth-child(odd) > .info > .title::before {
+  left: -45px;
+}
+
+/* setting dot to the right if the card is odd */
+.card:nth-child(even) > .info > .title::before {
+  right: -45px;
 }
 
 /* ************* */
