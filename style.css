@@ -39,7 +39,7 @@ shades:
 /* WHITESPACE  */
 /* Spacing Scale (px) */
 /* 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 *,
 *::before,
@@ -53,7 +53,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Fredoka', Times, serif;
+  font-family: 'Rubik', sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
@@ -150,7 +150,7 @@ body {
   column-gap: 4.8rem;
 }
 .hero-heading {
-  font-size: 6.2rem;
+  font-size: 5.2rem;
   font-weight: 500;
   margin-bottom: 4.8rem;
 }
