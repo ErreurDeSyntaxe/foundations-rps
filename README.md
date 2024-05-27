@@ -1,4 +1,5 @@
 # foundations-rock-paper-scissors
+
 An in-browser console game of paper, scissors, stone
 
 # Preview
@@ -9,27 +10,27 @@ An in-browser console game of paper, scissors, stone
 
 # Links
 
--[Assignment Page (Dec '23)](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
+-[Assignment Page (May '24)](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
 
--[Finished Project](https://erreurdesyntaxe.github.io/foundations-rock-paper-scissors/)
+-[Finished Project](https://erreurdesyntaxe.github.io/foundations-rps/)
 
 # Notable Features
 
 -Interactive buttons  
--Starting a new game  
+-Starting a new game
 
 # Challenges
 
 -User input validation (when it was through the console)  
 -Comparing the computer's hand to the user's hand  
--The general logic of the whole program  
+-The general logic of the whole program
 
 # Lessons
 
--The backend is difficult but more logical (?)  
+-The backend is difficult but more logical (?)
 
 # Diary
 
-My objective at this stage is to follow the guidelines explained in the problem 
-solving lesson: understand the objectives, plan from the interface to the input 
-and output and algorithms, write pseudocode, and divide tasks.  
+My objective at this stage is to follow the guidelines explained in the problem solving lesson: understand the objectives, plan from the interface to the input and output and algorithms, write pseudocode, and divide tasks.
+
+After learning some CSS and forgetting a lot of JavaScript, I have come back to redo this project.
