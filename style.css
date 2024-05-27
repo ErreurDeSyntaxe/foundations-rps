@@ -486,10 +486,19 @@ body {
 .quote-author {
 }
 
-/* OTHER CONTENT */
+/* ************ */
+/* PLAY STYLING */
+/* ************ */
 .section-play {
-  display: none;
+  padding: 8rem 0;
+  background-color: #003049;
+  color: #eae2b7;
 }
+.play {
+  max-width: 130rem;
+  margin: 0 auto;
+}
+/* OTHER CONTENT */
 .footer {
   display: none;
 }
