@@ -25,7 +25,6 @@ const getHumanChoice = function () {
   let humanChoice;
   do {
     humanChoice = prompt('Rock, Paper, Scissors! What say you?');
-    // humanChoice = ' ROcK ';
     humanChoice = processInput(humanChoice);
   } while (!humanChoice);
   return humanChoice;

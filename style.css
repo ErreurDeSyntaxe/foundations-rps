@@ -498,6 +498,42 @@ body {
   max-width: 130rem;
   margin: 0 auto;
 }
+.display-container,
+.button-container {
+  max-width: 90%;
+  background-color: #eae2b7;
+  color: #003049;
+  border-radius: 9px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  margin-bottom: 3.2rem;
+}
+.player-icon {
+  width: 12.8rem;
+  fill: #003049;
+}
+.p1-score,
+.p2-score {
+  font-size: 12.8rem;
+  font-weight: 700;
+}
+.button-container {
+  grid-template-columns: repeat(3, 1fr);
+  background-color: #003049;
+}
+.btn-rock,
+.btn--play,
+.btn-paper {
+  width: 12.8rem;
+  background-color: #eae2b7;
+  fill: #003049;
+  border-radius: 9px;
+
+  cursor: pointer;
+}
+.btn-scissors {
+}
 /* OTHER CONTENT */
 .footer {
   display: none;
