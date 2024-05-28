@@ -5,6 +5,7 @@ const scores = [0, 0];
 const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
 const playButtons = document.querySelectorAll('.btn--play');
+const archive = document.querySelector('.archive');
 
 const getComputerChoice = function () {
   return HAND[Math.floor(Math.random() * 3)];
@@ -33,8 +34,18 @@ const getHumanChoice = function () {
   return humanChoice;
 };
 
-const displayHands = function (humanHand, computerHand) {
+const displayHands = function (humanHand, computerHand, roundWinner) {
   log(`*****\nHuman: ${humanHand} \nComputer: ${computerHand}`);
+  if (roundWinner === 0) {
+    archive.innerHTML += `<br/><span>${humanHand}</span> \u2014 ${computerHand}`;
+  }
+  if (roundWinner === 1) {
+    archive.innerHTML += `<br/>${humanHand} \u2014 <span>${computerHand}</span>`;
+  }
+  if (roundWinner === undefined) {
+    archive.innerHTML += `<br/>${humanHand} \u2014 ${computerHand}`;
+  }
+  log('Round Winner', roundWinner);
 };
 
 const displayScores = function () {
@@ -42,33 +53,35 @@ const displayScores = function () {
 };
 
 const determineWinner = function (humanHand, computerHand) {
+  let roundWinner = undefined;
   if (computerHand === 'paper') {
     if (humanHand === 'scissors') {
-      scores[0]++;
+      roundWinner = 0;
     }
     if (humanHand === 'rock') {
-      scores[1]++;
+      roundWinner = 1;
     }
   }
 
   if (computerHand === 'scissors') {
     if (humanHand === 'rock') {
-      scores[0]++;
+      roundWinner = 0;
     }
     if (humanHand === 'paper') {
-      scores[1]++;
+      roundWinner = 1;
     }
   }
 
   if (computerHand === 'rock') {
     if (humanHand === 'paper') {
-      scores[0]++;
+      roundWinner = 0;
     }
     if (humanHand === 'scissors') {
-      scores[1]++;
+      roundWinner = 1;
     }
   }
-  displayHands(humanHand, computerHand);
+  scores[roundWinner]++;
+  displayHands(humanHand, computerHand, roundWinner);
   humanScore.textContent = scores[0];
   computerScore.textContent = scores[1];
   displayScores();

@@ -505,14 +505,25 @@ body {
   background-color: #eae2b7;
   color: #003049;
   border-radius: 9px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  padding: 2.4rem;
   margin-bottom: 3.2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 20rem 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
 }
 .player-icon {
   width: 12.8rem;
   fill: #003049;
+}
+.archive {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  text-align: center;
+}
+.archive span {
+  font-weight: 700;
 }
 .p1-score,
 .p2-score {
@@ -532,7 +543,7 @@ body {
 .btn-paper {
   width: 12.8rem;
   background-color: #d62828;
-  fill: #003049;
+  fill: #eae2b7;
   box-shadow: 0 0 1rem 0.5rem #eae2b74a;
   border-radius: 9px;
 
