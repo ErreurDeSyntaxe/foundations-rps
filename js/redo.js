@@ -91,21 +91,23 @@ const determineWinner = function (humanHand, computerHand) {
 };
 
 const checkGameOver = function () {
-  if (scores[0] === 5 || scores[1] === 5) {
-    log(
-      `Game Over! ${
-        scores[0] === 5 ? 'The Resourceful Human' : 'The Almighty Computer'
-      } wins!`
-    );
-    playButtons.forEach((button) => (button.disabled = true));
-    if (scores[0] === 5) {
-      humanIcon.style.fill = '#d62828';
-      humanScore.style.color = '#d62828';
-    } else {
-      computerIcon.style.fill = '#d62828';
-      computerScore.style.color = '#d62828';
-    }
+  if (scores[0] !== 5 && scores[1] !== 5) return;
+
+  log(
+    `Game Over! ${
+      scores[0] === 5 ? 'The Resourceful Human' : 'The Almighty Computer'
+    } wins!`
+  );
+
+  playButtons.forEach((button) => (button.disabled = true));
+
+  if (scores[0] === 5) {
+    humanIcon.style.fill = '#d62828';
+    humanScore.style.color = '#d62828';
+    return;
   }
+  computerIcon.style.fill = '#d62828';
+  computerScore.style.color = '#d62828';
 };
 
 // Used in the no-GUI version
