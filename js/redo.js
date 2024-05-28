@@ -5,6 +5,7 @@ const scores = [0, 0];
 const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
 const playButtons = document.querySelectorAll('.btn--play');
+const playAgainButton = document.querySelector('.btn--play-again');
 const archive = document.querySelector('.archive');
 const humanIcon = document.querySelector('.human');
 const computerIcon = document.querySelector('.computer');
@@ -110,6 +111,17 @@ const checkGameOver = function () {
   computerScore.style.color = '#d62828';
 };
 
+const startNewGame = function () {
+  humanIcon.style.fill = '#003049';
+  humanScore.style.color = '#003049';
+  humanScore.textContent = '0';
+  computerIcon.style.fill = '#003049';
+  computerScore.style.color = '#003049';
+  computerScore.textContent = '0';
+  archive.textContent = '';
+  playButtons.forEach((button) => (button.disabled = false));
+};
+
 // Used in the no-GUI version
 const playRound = function () {
   log('********************');
@@ -138,6 +150,9 @@ window.addEventListener('load', () => {
   });
   playButtons[2].addEventListener('click', () => {
     determineWinner('scissors', getComputerChoice());
+  });
+  playAgainButton.addEventListener('click', () => {
+    startNewGame();
   });
 
   // startGame();
