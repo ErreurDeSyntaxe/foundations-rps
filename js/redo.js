@@ -6,6 +6,8 @@ const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
 const playButtons = document.querySelectorAll('.btn--play');
 const archive = document.querySelector('.archive');
+const humanIcon = document.querySelector('.human');
+const computerIcon = document.querySelector('.computer');
 
 const getComputerChoice = function () {
   return HAND[Math.floor(Math.random() * 3)];
@@ -96,6 +98,13 @@ const checkGameOver = function () {
       } wins!`
     );
     playButtons.forEach((button) => (button.disabled = true));
+    if (scores[0] === 5) {
+      humanIcon.style.fill = '#d62828';
+      humanScore.style.color = '#d62828';
+    } else {
+      computerIcon.style.fill = '#d62828';
+      computerScore.style.color = '#d62828';
+    }
   }
 };
 
