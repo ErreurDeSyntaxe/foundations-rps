@@ -501,6 +501,7 @@ body {
 .display-container,
 .button-container {
   max-width: 90%;
+  margin: 0 auto;
   background-color: #eae2b7;
   color: #003049;
   border-radius: 9px;
@@ -522,18 +523,22 @@ body {
   grid-template-columns: repeat(3, 1fr);
   background-color: #003049;
 }
+.button-container button {
+  background: none;
+  border: none;
+}
 .btn-rock,
-.btn--play,
+.btn-scissors,
 .btn-paper {
   width: 12.8rem;
-  background-color: #eae2b7;
+  background-color: #d62828;
   fill: #003049;
+  box-shadow: 0 0 1rem 0.5rem #eae2b74a;
   border-radius: 9px;
 
   cursor: pointer;
 }
-.btn-scissors {
-}
+
 /* OTHER CONTENT */
 .footer {
   display: none;
