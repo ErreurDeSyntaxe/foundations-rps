@@ -116,11 +116,13 @@ const startNewGame = function () {
   humanScore.style.color = '#003049';
   humanScore.textContent = '0';
   scores[0] = 0;
+
   computerIcon.style.fill = '#003049';
   computerScore.style.color = '#003049';
   computerScore.textContent = '0';
-  archive.textContent = '';
   scores[1] = 0;
+  
+  archive.textContent = '';
   playButtons.forEach((button) => (button.disabled = false));
 };
 
