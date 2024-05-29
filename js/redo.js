@@ -3,6 +3,7 @@ const log = console.log;
 const HAND = ['rock', 'paper', 'scissors'];
 const scores = [0, 0];
 const header = document.querySelector('.header');
+const mainNavLinks = document.querySelectorAll('.main-nav-link');
 const btnMobileNav = document.querySelector('.btn-mobile-nav');
 const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
@@ -217,6 +218,11 @@ window.addEventListener('load', () => {
   });
   btnMobileNav.addEventListener('click', () => {
     header.classList.toggle('nav-open');
+  });
+  mainNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
+    });
   });
 
   // startGame();
