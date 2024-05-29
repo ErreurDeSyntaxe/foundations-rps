@@ -4,6 +4,7 @@ const HAND = ['rock', 'paper', 'scissors'];
 const scores = [0, 0];
 const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
+const playButtonContainer = document.querySelector('.button-container');
 const playButtons = document.querySelectorAll('.btn--play');
 const playAgainButton = document.querySelector('.btn--play-again');
 const archive = document.querySelector('.archive');
@@ -58,7 +59,8 @@ const displayScores = function () {
   log(`Human: ${scores[0]}\nComputer: ${scores[1]}\n*****`);
 };
 
-const determineWinner = function (humanHand, computerHand) {
+const determineWinner = function (humanHand) {
+  let computerHand = getComputerChoice();
   let roundWinner = undefined;
   if (computerHand === 'paper') {
     if (humanHand === 'scissors') {
@@ -103,9 +105,8 @@ const checkGameOver = function () {
     } wins!`
   );
 
-  playButtons.forEach((button) => (button.disabled = true));
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+  suspendPlayButtons();
+  activateModal();
 
   if (scores[0] === 5) {
     humanIcon.style.fill = '#d62828';
@@ -130,7 +131,7 @@ const startNewGame = function () {
   scores[1] = 0;
 
   archive.textContent = '';
-  playButtons.forEach((button) => (button.disabled = false));
+  reactivatePlayButtons();
   victoryText.textContent = 'You';
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
@@ -155,18 +156,56 @@ const startGame = function () {
   log('Would you like to play again?');
 };
 
+const activateModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const deactivateModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+const playRock = function () {
+  determineWinner('rock');
+};
+const playPaper = function () {
+  determineWinner('paper');
+};
+const playScissors = function () {
+  determineWinner('scissors');
+};
+
+const activatePlayButtons = function () {
+  playButtons[0].addEventListener('click', playRock);
+  playButtons[1].addEventListener('click', playPaper);
+  playButtons[2].addEventListener('click', playScissors);
+};
+const reactivatePlayButtons = function () {
+  playButtons[0].removeEventListener('click', activateModal);
+  playButtons[1].removeEventListener('click', activateModal);
+  playButtons[2].removeEventListener('click', activateModal);
+  activatePlayButtons();
+};
+
+const suspendPlayButtons = function () {
+  playButtons[0].removeEventListener('click', playRock);
+  playButtons[1].removeEventListener('click', playPaper);
+  playButtons[2].removeEventListener('click', playScissors);
+
+  playButtons[0].addEventListener('click', activateModal);
+  playButtons[1].addEventListener('click', activateModal);
+  playButtons[2].addEventListener('click', activateModal);
+};
+
 window.addEventListener('load', () => {
-  playButtons[0].addEventListener('click', () => {
-    determineWinner('rock', getComputerChoice());
-  });
-  playButtons[1].addEventListener('click', () => {
-    determineWinner('paper', getComputerChoice());
-  });
-  playButtons[2].addEventListener('click', () => {
-    determineWinner('scissors', getComputerChoice());
-  });
+  activatePlayButtons();
   playAgainButton.addEventListener('click', () => {
     startNewGame();
+  });
+  overlay.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
   });
 
   // startGame();
