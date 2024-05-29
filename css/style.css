@@ -94,6 +94,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: relative;
 }
 .header-logo {
   height: 8rem;
@@ -134,6 +136,18 @@ body {
   color: #eae2b7;
 }
 .btn-mobile-nav {
+  display: none;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.mobile-nav-menu,
+.mobile-nav-close {
+  width: 4.4rem;
+  fill: #eae2b7;
+}
+.mobile-nav-close {
   display: none;
 }
 
@@ -518,6 +532,7 @@ body {
   grid-template-columns: 1fr 20rem 1fr;
   grid-template-rows: repeat(2, 1fr);
   justify-items: center;
+  align-items: center;
 }
 .player-icon {
   width: 12.8rem;

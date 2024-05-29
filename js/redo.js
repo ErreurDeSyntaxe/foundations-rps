@@ -2,6 +2,8 @@
 const log = console.log;
 const HAND = ['rock', 'paper', 'scissors'];
 const scores = [0, 0];
+const header = document.querySelector('.header');
+const btnMobileNav = document.querySelector('.btn-mobile-nav');
 const humanScore = document.querySelector('.p1-score');
 const computerScore = document.querySelector('.p2-score');
 const playButtonContainer = document.querySelector('.button-container');
@@ -212,6 +214,9 @@ window.addEventListener('load', () => {
   overlay.addEventListener('click', () => {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
+  });
+  btnMobileNav.addEventListener('click', () => {
+    header.classList.toggle('nav-open');
   });
 
   // startGame();
