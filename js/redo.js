@@ -9,11 +9,15 @@ const playAgainButton = document.querySelector('.btn--play-again');
 const archive = document.querySelector('.archive');
 const humanIcon = document.querySelector('.human');
 const computerIcon = document.querySelector('.computer');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const victoryText = document.querySelector('.victory');
 
 const getComputerChoice = function () {
   return HAND[Math.floor(Math.random() * 3)];
 };
 
+// Used in the no-GUI version
 const processInput = function (userInput) {
   const cleanInput = userInput.toLowerCase().trim();
   if (
@@ -48,7 +52,6 @@ const displayHands = function (humanHand, computerHand, roundWinner) {
   if (roundWinner === undefined) {
     archive.innerHTML += `<br/>${humanHand} \u2014 ${computerHand}`;
   }
-  log('Round Winner', roundWinner);
 };
 
 const displayScores = function () {
@@ -101,14 +104,18 @@ const checkGameOver = function () {
   );
 
   playButtons.forEach((button) => (button.disabled = true));
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 
   if (scores[0] === 5) {
     humanIcon.style.fill = '#d62828';
     humanScore.style.color = '#d62828';
+    victoryText.textContent += ' win!';
     return;
   }
   computerIcon.style.fill = '#d62828';
   computerScore.style.color = '#d62828';
+  victoryText.textContent += ' lose!';
 };
 
 const startNewGame = function () {
@@ -121,9 +128,12 @@ const startNewGame = function () {
   computerScore.style.color = '#003049';
   computerScore.textContent = '0';
   scores[1] = 0;
-  
+
   archive.textContent = '';
   playButtons.forEach((button) => (button.disabled = false));
+  victoryText.textContent = 'You';
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
 };
 
 // Used in the no-GUI version

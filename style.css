@@ -116,6 +116,7 @@ body {
 .main-nav-link:active {
   color: #d62828;
 }
+.btn-cta,
 .btn-cta:link,
 .btn-cta:visited {
   font-weight: 700;
@@ -493,6 +494,8 @@ body {
   padding: 8rem 0;
   background-color: #003049;
   color: #eae2b7;
+
+  position: relative;
 }
 .play {
   max-width: 130rem;
@@ -549,6 +552,49 @@ body {
   border-radius: 9px;
 
   cursor: pointer;
+}
+
+/* ******************** */
+/* MODAL WINDOW STYLING */
+/* ******************** */
+.hidden {
+  display: none !important;
+}
+.overlay {
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 47, 73, 0.313);
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+.modal {
+  width: 25rem;
+  height: 20rem;
+  border-radius: 9px;
+  background-color: #003049;
+  color: #eae2b7;
+  font-size: 3rem;
+  font-weight: 600;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.8rem;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -70%);
+}
+.btn--play-again {
+  color: #eae2b7;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 /* OTHER CONTENT */
