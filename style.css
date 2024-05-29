@@ -558,7 +558,10 @@ body {
 /* MODAL WINDOW STYLING */
 /* ******************** */
 .hidden {
-  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: all 300ms;
 }
 .overlay {
   width: 100%;
