@@ -1,0 +1,117 @@
+/* WHITESPACE  */
+/* Spacing Scale (px) */
+/* 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 */
+/* Font Sizing Scale (px) */
+/* 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+/* 1408px */
+@media (max-width: 88em) {
+  .section-hero,
+  .section-testimonials,
+  .section-play {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+  }
+}
+
+/* 1216px */
+@media (max-width: 76em) {
+  html {
+    font-size: 56.25%;
+  }
+  .card:nth-child(odd) .title::before {
+    transform: translateX(-3.5rem);
+  }
+  .card:nth-child(even) .title::before {
+    transform: translateX(3.5rem);
+  }
+}
+
+/* 928px */
+@media (max-width: 58em) {
+  html {
+    font-size: 50%;
+  }
+  .hero {
+    grid-template-columns: 2fr 1fr;
+  }
+  .card:nth-child(odd) .title::before {
+    transform: translateX(-3rem);
+  }
+  .card:nth-child(even) .title::before {
+    transform: translateX(3rem);
+  }
+  .testimonials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial-card {
+    max-width: 80%;
+  }
+  .section-rules {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+  }
+}
+
+/* 752px */
+@media (max-width: 47em) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-img-box {
+    grid-row: 1;
+  }
+  .hero-img {
+    height: 22rem;
+    width: 22rem;
+  }
+}
+
+/* 560px */
+@media (max-width: 35em) {
+  .hero-img {
+    height: 18rem;
+  }
+  .timeline {
+    max-width: 45rem;
+  }
+  .info {
+    padding: 3.2rem;
+  }
+  .card:nth-child(odd) .title::before {
+    transform: translateX(-1.3rem);
+  }
+  .card:nth-child(even) .title::before {
+    transform: translateX(1.3rem);
+  }
+  .player-icon {
+    width: 9.6rem;
+  }
+  .btn-rock,
+  .btn-scissors,
+  .btn-paper {
+    width: 9.6rem;
+  }
+}
+
+/* 464px */
+@media (max-width: 29em) {
+  .hero-img {
+    height: 14rem;
+  }
+  .rules-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .display-container,
+  .button-container {
+    max-width: 90%;
+    grid-template-columns: 1fr 15rem 1fr;
+  }
+}
+
+/* 352px */
+@media (max-width: 22em) {
+  
+}

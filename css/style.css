@@ -33,8 +33,11 @@ shades:
 */
 
 /* BOX SHADOWS */
+/* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); */
+/* box-shadow: 0 0 1rem 0.5rem #eae2b74a; */
 
 /* BORDER RADIUSES */
+/* 9px */
 
 /* WHITESPACE  */
 /* Spacing Scale (px) */
@@ -265,12 +268,12 @@ body {
 }
 
 /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
-@media only screen and (max-width: 400px) {
+/* @media only screen and (max-width: 400px) {
   .card:nth-child(odd)::before {
     top: -5px;
     bottom: -5px;
   }
-}
+} */
 
 /* Setting the border of top, bottom, right */
 .card:nth-child(even)::before {
@@ -332,7 +335,7 @@ body {
   transform: translateX(-4rem);
 }
 .card:nth-child(even) .title::before {
-  transform: translateX(40px);
+  transform: translateX(4rem);
 }
 .description {
   font-size: 1.8rem;
@@ -530,7 +533,7 @@ body {
 }
 .p1-score,
 .p2-score {
-  font-size: 12.8rem;
+  font-size: 9.6rem;
   font-weight: 700;
 }
 .button-container {
