@@ -156,14 +156,20 @@ const startGame = function () {
   log('Would you like to play again?');
 };
 
+const closeWithEsc = function () {
+  deactivateModal();
+};
+
 const activateModal = function () {
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
+  window.addEventListener('keydown', closeWithEsc);
 };
 
 const deactivateModal = function () {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
+  window.removeEventListener('keydown', closeWithEsc);
 };
 
 const playRock = function () {

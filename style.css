@@ -561,7 +561,9 @@ body {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: all 300ms;
+  transform: scale(0.1);
+
+  transition: all 700ms;
 }
 .overlay {
   width: 100%;
