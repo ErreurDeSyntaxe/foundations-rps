@@ -167,4 +167,4 @@ function endGame() {
     }
 }
 
-playGame();
+// playGame();

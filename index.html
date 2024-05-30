@@ -12,11 +12,15 @@
     />
     <link
       rel="stylesheet"
-      href="./style.css"
+      href="./css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./css/querries.css"
     />
     <link
       rel="icon"
-      href="./img/favicon.svg"
+      href="./img/favicon-small.png"
     />
     <link
       rel="apple-touch-icon"
@@ -28,48 +32,630 @@
     />
     <script
       defer
-      src="./js/script.js"
+      src="./js/redo.js"
     ></script>
-    <title>Rock Paper Scissors</title>
+    <script
+      defer
+      src="./js/carousel.js"
+    ></script>
+    <title>Rock Paper Scissors: The Divine Game</title>
   </head>
+
   <body>
-    <header><h1>Rock Paper Scissors</h1></header>
+    <header class="header ">
+      <a href="#"
+        ><img
+          src="./img/erreur-logo.png"
+          alt="Erreur de Syntaxe Logo"
+          class="header-logo logo"
+      /></a>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li>
+            <a
+              href="#origin"
+              class="main-nav-link"
+              >Origin</a
+            >
+          </li>
+          <li>
+            <a
+              href="#rules"
+              class="main-nav-link"
+              >Rules</a
+            >
+          </li>
+          <li>
+            <a
+              href="#testimonials"
+              class="main-nav-link"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a
+              href="#play"
+              class="main-nav-link btn-cta"
+              >Play</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="mobile-nav-menu"
+        >
+          <title>menu</title>
+          <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="mobile-nav-close"
+        >
+          <title>close-box-outline</title>
+          <path
+            d="M19,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V5H19V19M17,8.4L13.4,12L17,15.6L15.6,17L12,13.4L8.4,17L7,15.6L10.6,12L7,8.4L8.4,7L12,10.6L15.6,7L17,8.4Z"
+          />
+        </svg>
+      </button>
+    </header>
 
     <main>
-      <h1>The first to reach 5 points wins!</h1>
-      <p class="instructions">
-        The computer will generate its own choice of Rock, Paper or Scissors.
-        Choose yours.
-      </p>
-      <div class="container">
-        <button
-          class="playBtn"
-          id="rockBtn"
-        >
-          Rock
-        </button>
-        <button
-          class="playBtn"
-          id="paperBtn"
-        >
-          Paper
-        </button>
-        <button
-          class="playBtn"
-          id="scissorsBtn"
-        >
-          Scissors
-        </button>
-      </div>
-      <div class="scoreSheet">
-        <p>The score is:</p>
-        <span id="computerScore">Computer: 0</span>
-        <span id="playerScore">0 :Player</span>
-        <div class="offerRematch"></div>
-        <div class="roundResults"></div>
-      </div>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <p class="hero-heading">Vanquish Uncertainty</p>
+            <p class="hero-text">
+              Be it legal disputes, relationship decisions, military manoeuvres,
+              a stand-off with a drug cartel or a chess move, a game of Rock
+              Paper Scissors can solve decide the outcome of any situation for
+              you.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="#play"
+                class="hero-btn btn-cta"
+                >Play Now</a
+              >
+              <a
+                href="#origin"
+                class="hero-btn btn-more"
+                >Learn &darr;</a
+              >
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <div class="carousel">
+              <img
+                src="./img/hero-1.svg"
+                alt="The three possible options: rock, paper, and scissors"
+                class="hero-img"
+              />
+              <img
+                src="./img/hero-2.svg"
+                alt="The three possible options: rock, paper, and scissors"
+                class="hero-img"
+              />
+              <img
+                src="./img/hero-3.svg"
+                alt="The three possible options: rock, paper, and scissors"
+                class="hero-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-origin"
+        id="origin"
+      >
+        <div class="origin">
+          <div class="section-heading">
+            <p class="subheading">origin</p>
+            <h2 class="heading-secondary">A Timeline of Rock Paper Scissors</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="outer">
+              <div class="card">
+                <div class="info">
+                  <p class="title">Life appears on earth</p>
+                  <p class="description">
+                    Roughly
+                    <span class="event-date">3.7 billion years ago</span>,
+                    shortly after the formation of Earth, life emerges in the
+                    ocean. Single-cell organisms were indeed found in rocks from
+                    western Greenland.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="info">
+                  <p class="title">Life takes a step on land</p>
+                  <p class="description">
+                    The first Earth walk, accomplished by a millipede-like
+                    creature in Scottland dates back
+                    <span class="event-date">425 million years</span>, according
+                    to recent discoveries. Trees did not exist yet.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="info">
+                  <p class="title">The first humans evolve into being</p>
+                  <p class="description">
+                    The first human ancestors appeared between
+                    <span class="event-date">
+                      5,000,000 and 7,000,000 years ago
+                    </span>
+                    in Africa. They walked on two legs, freeing their front
+                    limbs for the greatest invention: Rock Paper Scissors.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="info">
+                  <p class="title">Humans invent Rock Paper Scissors</p>
+                  <p class="description">
+                    In modern-day Somalia, some
+                    <span class="event-date">1,500,000 years ago</span>, humans
+                    develop a revolutionary way of settling situations whose
+                    outcomes seem uncertain. They will change the course of
+                    history.
+                  </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="info">
+                  <p class="title">Humans tame fire</p>
+                  <p class="description">
+                    The oldest evidence of taming fire was found in Israel's
+                    Qesem Cave and was placed
+                    <span class="event-date">400,000 years ago</span>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-rules"
+        id="rules"
+      >
+        <div class="rules">
+          <div class="section-heading">
+            <p class="subheading">Rules</p>
+            <h2 class="heading-secondary">The Art of War</h2>
+          </div>
+          <div class="rules-container">
+            <!-- Rule 1 -->
+            <div class="rule-text-box">
+              <span class="rule-number">1</span>
+              <span class="rule-text">Rock beats scissors.</span>
+            </div>
+            <div class="rule-img-box">
+              <div class="img-1">
+                <img
+                  src="./img/hero-2.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-win"
+                />
+              </div>
+              <div class="img-2">
+                <img
+                  src="./img/hero-1.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-lose"
+                />
+              </div>
+            </div>
+            <!-- Rule 2 -->
+            <div class="rule-text-box">
+              <span class="rule-number">2</span>
+              <span class="rule-text">Scissors beat paper.</span>
+            </div>
+            <div class="rule-img-box">
+              <div class="img-1">
+                <img
+                  src="./img/hero-1.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-win"
+                />
+              </div>
+              <div class="img-2">
+                <img
+                  src="./img/hero-3.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-lose"
+                />
+              </div>
+            </div>
+            <!-- Rule 3 -->
+            <div class="rule-text-box">
+              <span class="rule-number">3</span>
+              <span class="rule-text">Paper beats rock.</span>
+            </div>
+            <div class="rule-img-box">
+              <div class="img-1">
+                <img
+                  src="./img/hero-3.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-win"
+                />
+              </div>
+              <div class="img-2">
+                <img
+                  src="./img/hero-2.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-lose"
+                />
+              </div>
+            </div>
+            <!-- Rule 4 -->
+            <div class="rule-text-box">
+              <span class="rule-number">4</span>
+              <span class="rule-text">Ties yeild no points.</span>
+            </div>
+            <div class="rule-img-box">
+              <div class="img-1">
+                <img
+                  src="./img/hero-2.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-win rule-img-tie"
+                />
+              </div>
+              <div class="img-2">
+                <img
+                  src="./img/hero-2.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-lose"
+                />
+              </div>
+            </div>
+            <!-- Rule 5 -->
+            <div class="rule-text-box">
+              <span class="rule-number">5</span>
+              <span class="rule-text">The First To 5 Wins</span>
+            </div>
+            <div class="rule-img-box">
+              <div class="img-1">
+                <img
+                  src="./img/number5.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-win"
+                />
+              </div>
+              <div class="img-2">
+                <img
+                  src="./img/number4.svg"
+                  alt="Rock"
+                  class="rule-img rule-img-lose"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-testimonials"
+        id="testimonials"
+      >
+        <div class="testimonials">
+          <div class="section-heading">
+            <p class="subheading">Testimonials</p>
+            <h2 class="heading-secondary">In the footsteps of the greatest</h2>
+          </div>
+
+          <div class="testimonials-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card">
+              <div class="testimonial-img-box">
+                <img
+                  src="./img/julius-caesar.webp"
+                  alt="A picture of the bust of Julius Caesar, Roman general and stateman"
+                  class="testimonial-img"
+                />
+              </div>
+              <div class="rating-stars">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+              </div>
+              <blockquote class="quote">
+                &ldquo;I came. I saw. I cut through my enemies.&rdquo;
+              </blockquote>
+              <p class="quote-author">&mdash;Julius Caesar</p>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card">
+              <div class="testimonial-img-box">
+                <img
+                  src="./img/sun-tzu.webp"
+                  alt="A picture of the bust of Sun Tzu, Chinese military startegist, philosopher, and writer of the Eastern Zhou period"
+                  class="testimonial-img testimonial-img-large"
+                />
+              </div>
+              <div class="rating-stars">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+              </div>
+              <blockquote class="quote">
+                &ldquo;Know thyself. Know thy enemy. Follow the paper trail of
+                success.&rdquo;
+              </blockquote>
+              <p class="quote-author">&mdash;Sun Tzu (孫子)</p>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-img-box">
+                <img
+                  src="./img/marie-curie.webp"
+                  alt="A painting of Marie Curie, physicist and chemist, greatest of this trio"
+                  class="testimonial-img"
+                />
+              </div>
+              <div class="rating-stars">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>star</title>
+                  <path
+                    d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"
+                  />
+                </svg>
+              </div>
+              <blockquote class="quote">
+                &ldquo;Radium and Polonium are two kinds of rock.&rdquo;
+              </blockquote>
+              <p class="quote-author">&mdash;Marie Curie</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-play"
+        id="play"
+      >
+        <div class="play">
+          <div class="section-heading">
+            <p class="subheading">Play</p>
+            <h2 class="heading-secondary">Show Your Hand</h2>
+          </div>
+
+          <div class="game-display">
+            <div class="display-container">
+              <!-- Human icon -->
+              <p class="player">
+                <svg
+                  class="player-icon human"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>human</title>
+                  <path
+                    d="M21,9H15V22H13V16H11V22H9V9H3V7H21M12,2A2,2 0 0,1 14,4A2,2 0 0,1 12,6C10.89,6 10,5.1 10,4C10,2.89 10.89,2 12,2Z"
+                  />
+                </svg>
+              </p>
+              <!-- Display the rounds' hands and outcome -->
+              <p class="archive"></p>
+              <!-- Computer icon -->
+              <p class="player">
+                <svg
+                  class="player-icon computer"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>desktop-classic</title>
+                  <path
+                    d="M6,2C4.89,2 4,2.89 4,4V12C4,13.11 4.89,14 6,14H18C19.11,14 20,13.11 20,12V4C20,2.89 19.11,2 18,2H6M6,4H18V12H6V4M4,15C2.89,15 2,15.89 2,17V20C2,21.11 2.89,22 4,22H20C21.11,22 22,21.11 22,20V17C22,15.89 21.11,15 20,15H4M8,17H20V20H8V17M9,17.75V19.25H13V17.75H9M15,17.75V19.25H19V17.75H15Z"
+                  />
+                </svg>
+              </p>
+              <!-- Human score -->
+              <p class="p1-score">0</p>
+              <!-- Computer score -->
+              <p class="p2-score">0</p>
+            </div>
+            <div class="button-container">
+              <button class="btn--play">
+                <svg
+                  class="btn-rock"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>diamond-stone</title>
+                  <path
+                    d="M16,9H19L14,16M10,9H14L12,17M5,9H8L10,16M15,4H17L19,7H16M11,4H13L14,7H10M7,4H9L8,7H5M6,2L2,8L12,22L22,8L18,2H6Z"
+                  />
+                </svg>
+              </button>
+              <button class="btn--play">
+                <svg
+                  class="btn-paper"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>newspaper</title>
+                  <path
+                    d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z"
+                  />
+                </svg>
+              </button>
+              <button class="btn--play">
+                <svg
+                  class="btn-scissors"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>content-cut</title>
+                  <path
+                    d="M19,3L13,9L15,11L22,4V3M12,12.5A0.5,0.5 0 0,1 11.5,12A0.5,0.5 0 0,1 12,11.5A0.5,0.5 0 0,1 12.5,12A0.5,0.5 0 0,1 12,12.5M6,20A2,2 0 0,1 4,18C4,16.89 4.9,16 6,16A2,2 0 0,1 8,18C8,19.11 7.1,20 6,20M6,8A2,2 0 0,1 4,6C4,4.89 4.9,4 6,4A2,2 0 0,1 8,6C8,7.11 7.1,8 6,8M9.64,7.64C9.87,7.14 10,6.59 10,6A4,4 0 0,0 6,2A4,4 0 0,0 2,6A4,4 0 0,0 6,10C6.59,10 7.14,9.87 7.64,9.64L10,12L7.64,14.36C7.14,14.13 6.59,14 6,14A4,4 0 0,0 2,18A4,4 0 0,0 6,22A4,4 0 0,0 10,18C10,17.41 9.87,16.86 9.64,16.36L12,14L19,21H22V20L9.64,7.64Z"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Modal Window appears when the game is over -->
+            <div class="modal hidden">
+              <p class="victory">You</p>
+              <button class="btn--play-again btn-cta">New Game</button>
+            </div>
+            <div class="overlay hidden"></div>
+            <!-- Modal Window appears when the game is over -->
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>Paper Scissors Stone, as we say in Asia</footer>
+    <footer class="footer">
+      <div class="logo-col">
+        <img
+          src=""
+          alt="Erreur de Syntaxe logo"
+          width="111px"
+          height="111px"
+          class="footer-logo logo"
+        />
+      </div>
+
+      <nav class="nav-col">
+        <ul class="footer-nav-list">
+          <li class="footer-list-item"><a href="#">Link 1</a></li>
+        </ul>
+      </nav>
+    </footer>
   </body>
 </html>
