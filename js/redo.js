@@ -114,12 +114,12 @@ const checkGameOver = function () {
   if (scores[0] === 5) {
     humanIcon.style.fill = '#d62828';
     humanScore.style.color = '#d62828';
-    victoryText.textContent += ' win!';
+    victoryText.textContent = 'You win!';
     return;
   }
   computerIcon.style.fill = '#d62828';
   computerScore.style.color = '#d62828';
-  victoryText.textContent += ' lose!';
+  victoryText.textContent = 'You lose!';
 };
 
 const startNewGame = function () {
@@ -135,7 +135,6 @@ const startNewGame = function () {
 
   archive.textContent = '';
   reactivatePlayButtons();
-  victoryText.textContent = 'You';
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
 };
