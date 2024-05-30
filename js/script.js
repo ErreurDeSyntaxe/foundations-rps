@@ -1,170 +1,228 @@
-//This array contains the three possible HANDs
+'use strict';
+const log = console.log;
 const HAND = ['rock', 'paper', 'scissors'];
-let computerScore = 0;
-let playerScore = 0;
+const scores = [0, 0];
+const header = document.querySelector('.header');
+const mainNavLinks = document.querySelectorAll('.main-nav-link');
+const btnMobileNav = document.querySelector('.btn-mobile-nav');
+const humanScore = document.querySelector('.p1-score');
+const computerScore = document.querySelector('.p2-score');
+const playButtonContainer = document.querySelector('.button-container');
+const playButtons = document.querySelectorAll('.btn--play');
+const playAgainButton = document.querySelector('.btn--play-again');
+const archive = document.querySelector('.archive');
+const humanIcon = document.querySelector('.human');
+const computerIcon = document.querySelector('.computer');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const victoryText = document.querySelector('.victory');
 
-function getComputerChoice () {
-    let randomN = Math.floor(Math.random() * 3);
-    return randomN;
-    //returns the position in the HAND array to compare more easily
-}
+const getComputerChoice = function () {
+  return HAND[Math.floor(Math.random() * 3)];
+};
 
-function getPlayerChoice() {
+// Used in the no-GUI version
+const processInput = function (userInput) {
+  const cleanInput = userInput.toLowerCase().trim();
+  if (
+    cleanInput === 'rock' ||
+    cleanInput === 'paper' ||
+    cleanInput === 'scissors'
+  ) {
+    return cleanInput;
+  }
+  return false;
+};
 
-    let computerChoice;
-    let buttons = document.querySelectorAll(".playBtn");
+// Used in the no-GUI version
+const getHumanChoice = function () {
+  let humanChoice;
+  do {
+    // humanChoice = prompt('Rock, Paper, Scissors! What say you?');
+    humanChoice = getComputerChoice();
+    humanChoice = processInput(humanChoice);
+  } while (!humanChoice);
+  return humanChoice;
+};
 
-    buttons[0].addEventListener("click", () => {
-        computerChoice = getComputerChoice();
-        playRound(computerChoice, "0");
+const displayHands = function (humanHand, computerHand, roundWinner) {
+  log(`*****\nHuman: ${humanHand} \nComputer: ${computerHand}`);
+  if (roundWinner === 0) {
+    archive.innerHTML += `<br/><span>${humanHand}</span> \u2014 ${computerHand}`;
+  }
+  if (roundWinner === 1) {
+    archive.innerHTML += `<br/>${humanHand} \u2014 <span>${computerHand}</span>`;
+  }
+  if (roundWinner === undefined) {
+    archive.innerHTML += `<br/>${humanHand} \u2014 ${computerHand}`;
+  }
+};
+
+const displayScores = function () {
+  log(`Human: ${scores[0]}\nComputer: ${scores[1]}\n*****`);
+};
+
+const determineWinner = function (humanHand) {
+  let computerHand = getComputerChoice();
+  let roundWinner = undefined;
+  if (computerHand === 'paper') {
+    if (humanHand === 'scissors') {
+      roundWinner = 0;
+    }
+    if (humanHand === 'rock') {
+      roundWinner = 1;
+    }
+  }
+
+  if (computerHand === 'scissors') {
+    if (humanHand === 'rock') {
+      roundWinner = 0;
+    }
+    if (humanHand === 'paper') {
+      roundWinner = 1;
+    }
+  }
+
+  if (computerHand === 'rock') {
+    if (humanHand === 'paper') {
+      roundWinner = 0;
+    }
+    if (humanHand === 'scissors') {
+      roundWinner = 1;
+    }
+  }
+  scores[roundWinner]++;
+  displayHands(humanHand, computerHand, roundWinner);
+  humanScore.textContent = scores[0];
+  computerScore.textContent = scores[1];
+  displayScores();
+  checkGameOver();
+};
+
+const checkGameOver = function () {
+  if (scores[0] !== 5 && scores[1] !== 5) return;
+
+  log(
+    `Game Over! ${
+      scores[0] === 5 ? 'The Resourceful Human' : 'The Almighty Computer'
+    } wins!`
+  );
+
+  suspendPlayButtons();
+  activateModal();
+
+  if (scores[0] === 5) {
+    humanIcon.style.fill = '#d62828';
+    humanScore.style.color = '#d62828';
+    victoryText.textContent = 'You win!';
+    return;
+  }
+  computerIcon.style.fill = '#d62828';
+  computerScore.style.color = '#d62828';
+  victoryText.textContent = 'You lose!';
+};
+
+const startNewGame = function () {
+  humanIcon.style.fill = '#003049';
+  humanScore.style.color = '#003049';
+  humanScore.textContent = '0';
+  scores[0] = 0;
+
+  computerIcon.style.fill = '#003049';
+  computerScore.style.color = '#003049';
+  computerScore.textContent = '0';
+  scores[1] = 0;
+
+  archive.textContent = '';
+  reactivatePlayButtons();
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
+// Used in the no-GUI version
+const playRound = function () {
+  log('********************');
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
+  log('Player : ', humanChoice);
+  log('Computer : ', computerChoice);
+  determineWinner(humanChoice, computerChoice);
+};
+
+// Used in the no-GUI version
+const startGame = function () {
+  do {
+    playRound();
+  } while (!checkGameOver());
+
+  log('Would you like to play again?');
+};
+
+const closeWithEsc = function () {
+  deactivateModal();
+};
+
+const activateModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  window.addEventListener('keydown', closeWithEsc);
+};
+
+const deactivateModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+  window.removeEventListener('keydown', closeWithEsc);
+};
+
+const playRock = function () {
+  determineWinner('rock');
+};
+const playPaper = function () {
+  determineWinner('paper');
+};
+const playScissors = function () {
+  determineWinner('scissors');
+};
+
+const activatePlayButtons = function () {
+  playButtons[0].addEventListener('click', playRock);
+  playButtons[1].addEventListener('click', playPaper);
+  playButtons[2].addEventListener('click', playScissors);
+};
+const reactivatePlayButtons = function () {
+  playButtons[0].removeEventListener('click', activateModal);
+  playButtons[1].removeEventListener('click', activateModal);
+  playButtons[2].removeEventListener('click', activateModal);
+  activatePlayButtons();
+};
+
+const suspendPlayButtons = function () {
+  playButtons[0].removeEventListener('click', playRock);
+  playButtons[1].removeEventListener('click', playPaper);
+  playButtons[2].removeEventListener('click', playScissors);
+
+  playButtons[0].addEventListener('click', activateModal);
+  playButtons[1].addEventListener('click', activateModal);
+  playButtons[2].addEventListener('click', activateModal);
+};
+
+window.addEventListener('load', () => {
+  activatePlayButtons();
+  playAgainButton.addEventListener('click', () => {
+    startNewGame();
+  });
+  overlay.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+  });
+  btnMobileNav.addEventListener('click', () => {
+    header.classList.toggle('nav-open');
+  });
+  mainNavLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      header.classList.remove('nav-open');
     });
-    buttons[1].addEventListener("click", () => {
-        computerChoice = getComputerChoice();
-        playRound(computerChoice, "1");
-    });
-    buttons[2].addEventListener("click", () => {
-        computerChoice = getComputerChoice();
-        playRound(computerChoice, "2");
-    });
-}
+  });
 
-//This plays RPS with the user until there is a winner
-//If the player and computer tie, the round is not over
-function playRound (computer, player) {
-    if (computer == player) {
-        displayScore("tie", computer, player);
-    } else if (computer - player == -1 || computer - player == 2) {
-        playerScore++;
-        displayScore("player", computer, player);
-    } else if (player - computer == -1 || player - computer == 2) {
-        computerScore++;
-        displayScore("computer", computer, player);
-    }
-    displayHand(computer, player);
-    if (gameOver()) {
-        console.log("Game Over!");
-        endGame();
-    }
-}
-
-function removeRecords() {
-    let roundResults = document.querySelector(".roundResults");
-    roundResults.textContent = "";
-}
-
-function displayHand(computer, player) {
-    let roundResults = document.querySelector(".roundResults");
-    let newestRound = document.createElement("p");
-
-    newestRound.textContent = HAND[computer] + " VS " + HAND[player];
-    roundResults.prepend(newestRound);
-}
-
-function displayScore(roundWinner = "newRound", computer = 3, player = 3) {
-
-    let cScore = document.querySelector("#computerScore");
-    cScore.textContent = "Computer: " + computerScore;
-    let hScore = document.querySelector("#playerScore");
-    hScore.textContent = playerScore + " : Player";
-
-    if (roundWinner == "tie") {     
-        console.log("You and the computer both chose " +
-            HAND[player][0].toUpperCase() +
-            HAND[player].slice(1) + "! It's a tie!");
-    }
-    else if (roundWinner == "player") {
-        console.log("You win this round! " +
-            HAND[player][0].toUpperCase() +
-            HAND[player].slice(1) + " beats " + HAND[computer] + "!");
-    }
-    else if (roundWinner == "computer") {
-        console.log("You lose this round! " +
-            HAND[computer][0].toLocaleUpperCase() +
-            HAND[computer].slice(1) + " beats " + HAND[player] + "!");
-    }
-    console.log("Computer: " + computerScore);
-    console.log("Player: " + playerScore);
-}
-
-function gameOver() {
-    return (computerScore == 5 || playerScore == 5);
-}
-
-function playGame() {
-    getPlayerChoice();
-}
-
-function resetScore() {
-    playerScore = 0;
-    computerScore = 0;
-}
-
-function removeButtons() {
-    let buttons = document.querySelectorAll(".playBtn");
-
-    buttons[0].style.visibility = "hidden";
-    buttons[1].style.visibility = "hidden";
-    buttons[2].style.visibility = "hidden";
-}
-
-function turnOffButtons () {
-    let buttons = document.querySelectorAll(".playBtn");
-
-    buttons[0].disabled = true;
-    buttons[1].disabled = true;
-    buttons[2].disabled = true;
-}
-
-function turnOnButtons() {
-    let buttons = document.querySelectorAll(".playBtn");
-
-    buttons[0].disabled = false;
-    buttons[1].disabled = false;
-    buttons[2].disabled = false;
-}
-
-function playAgain() {
-    let rematch = document.querySelector(".offerRematch");
-
-    const rematchBtn = document.createElement("button");
-    const declineBtn = document.createElement("button");
-
-    rematchBtn.textContent = "Play Again!";
-    declineBtn.textContent = "No thanks!";
-
-    rematch.appendChild(rematchBtn);
-    rematch.appendChild(declineBtn);
-
-    rematchBtn.addEventListener("click", () => {
-        resetScore();
-        displayScore();
-        turnOnButtons();
-        removeRecords();
-        rematch.removeChild(rematchBtn);
-        rematch.removeChild(declineBtn);
-
-    })
-    declineBtn.addEventListener("click", () => {
-        rematch.removeChild(rematchBtn);
-        rematch.removeChild(declineBtn);
-        removeButtons();
-    })
-}
-
-//This ends the game and offers a rematch
-function endGame() {
-    turnOffButtons();
-    if (playerScore == 5) {
-        console.log("You have won the match " +
-            playerScore + " to " + computerScore + ". Congratulations!!");
-        resetScore();
-        playAgain();
-    } else {
-        console.log("You have lost the match " +
-            computerScore + " to " + playerScore + ". Better luck next time!");
-        resetScore();
-        playAgain();
-    }
-}
-
-// playGame();
+  // startGame();
+});
