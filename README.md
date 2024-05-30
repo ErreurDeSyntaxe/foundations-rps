@@ -5,7 +5,7 @@ An in-browser console game of paper, scissors, stone
 # Preview
 
 <div align="center">
-    <img src="./project-preview.webp" alt="A screenshot of the score display and play buttons" style="border-radius:9px">
+    <img src="./project-preview.webp" alt="A screenshot of the score display and play buttons" style="border-radius:50%">
 </div>
 
 # Links
